@@ -4,7 +4,9 @@ import MAPSTRUCT_JAVA.dto.UsuearioRequest;
 import MAPSTRUCT_JAVA.entity.UsuarioEntity;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(
+        componentModel = "Spring"
+)
 public interface UsuarioMapper {
 
     UsuarioEntity maping(UsuearioRequest usuearioRequest);
