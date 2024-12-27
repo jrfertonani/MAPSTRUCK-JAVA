@@ -1,13 +1,12 @@
-package MAPSTRUCT_JAVA.entity;
+package MAPSTRUCT_JAVA.dto;
 
 import lombok.Data;
 
 @Data
-public class UsuarioEntity {
+public class UsuearioRequest {
 
-    private int id;
     private String nome;
     private String email;
     private String senha;
-
+    
 }
