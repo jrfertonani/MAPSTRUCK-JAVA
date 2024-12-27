@@ -1,12 +1,13 @@
 package MAPSTRUCT_JAVA.dto;
 
-import lombok.Data;
-
+import lombok.*;
+@Builder
 @Data
-public class UsuearioRequest {
+public class UsuarioRequest {
 
     private String nome;
     private String email;
     private String senha;
+
 
 }

@@ -1,5 +1,8 @@
 package MAPSTRUCT_JAVA;
 
+import MAPSTRUCT_JAVA.dto.UsuarioRequest;
+import MAPSTRUCT_JAVA.entity.UsuarioEntity;
+import MAPSTRUCT_JAVA.mapper.UsuarioMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,9 +16,17 @@ public class Application {
 	}
 
 	@Bean
-	public CommandLineRunner commandLineRunner(){
+	public CommandLineRunner commandLineRunner(UsuarioMapper usuarioMapper){
 		return args -> {
-            // Use the generated mapper here
+			UsuarioRequest usuarioRequest = UsuarioRequest
+					.builder()
+					.nome("Junior")
+					.email("email@email.com")
+					.senha("123")
+					.build();
+
+			UsuarioEntity usuarioEntity = usuarioMapper.map(usuarioRequest);
+            System.out.println(usuarioMapper);
         };
 	}
 }
